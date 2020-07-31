@@ -4,7 +4,7 @@ const Home = () => (
     {/* NAVBAR START */}
     <div className="navbar-wrapper">
       <nav className="navbar navbar-expand-lg navbar-dark fj-mw9">
-        <a className="navbar-brand mr-3 font-weight-bold" href="#">FilipJerga</a>
+        <a className="navbar-brand mr-3 font-weight-bold" href="#">Mehdi Hajikhani</a>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -15,13 +15,13 @@ const Home = () => (
               <a className="nav-link" href="#">Portfolio</a>
             </li>
             <li className="nav-item mr-3">
-              <a className="nav-link" href="#">Courses</a>
+              <a className="nav-link" href="#">Projects</a>
             </li>
             <li className="nav-item mr-3">
-              <a className="nav-link" href="#">Cv</a>
+              <a className="nav-link" href="#">CV</a>
             </li>
             <li className="nav-item mr-3">
-              <a className="nav-link" href="#">Ask me</a>
+              <a className="nav-link" href="#">Ask Me</a>
             </li>
           </ul>
           <ul className="navbar-nav ml-auto">
@@ -40,8 +40,8 @@ const Home = () => (
     <section className="fj-hero">
       <div className="fj-hero-wrapper row">
         <div className="hero-left col-md-6">
-          <h1 className="white hero-title">Hey I'm Filip. Experienced full stack developer</h1>
-          <h2 className="white hero-subtitle">Check my portfolio and video tutorials</h2>
+          <h1 className="white hero-title">Hey, I'm Mehdi. A web developer</h1>
+          <h2 className="white hero-subtitle">Join me on my journey </h2>
           <div className="button-container">
             <a href="" className="btn btn-main bg-blue ttu">See my work</a>
           </div>
@@ -51,7 +51,7 @@ const Home = () => (
             <a className="grow hero-link">
               <img
                 className="hero-image"
-                src="https://i.udemycdn.com/course/750x422/1652608_662b_8.jpg"></img>
+                src="home6.jpg"></img>
             </a>
           </div>
         </div>
@@ -125,7 +125,7 @@ const Home = () => (
             <p className="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
             <div className="avatar-container my-2">
               <img src="https://via.placeholder.com/150" className="avatar-image mr-2"></img>
-              <span className="avatar-title">Filip Jerga</span>
+              <span className="avatar-title">Mehdi Hajikhani</span>
             </div>
           </a>
           <a href="#" className="list-group-item list-group-item-action flex-column align-items-start mt-3 py-3 subtle-shadow no-border">
@@ -136,7 +136,7 @@ const Home = () => (
             <p className="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
             <div className="avatar-container my-2">
               <img src="https://via.placeholder.com/150" className="avatar-image mr-2"></img>
-              <span className="avatar-title">Filip Jerga</span>
+              <span className="avatar-title">Mehdi Hajikhani</span>
             </div>
           </a>
           <a href="#" className="list-group-item list-group-item-action flex-column align-items-start mt-3 py-3 subtle-shadow no-border">
@@ -147,7 +147,7 @@ const Home = () => (
             <p className="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
             <div className="avatar-container my-2">
               <img src="https://via.placeholder.com/150" className="avatar-image mr-2"></img>
-              <span className="avatar-title">Filip Jerga</span>
+              <span className="avatar-title">Mehdi Hajikhani</span>
             </div>
           </a>
         </div>
@@ -291,7 +291,7 @@ const Home = () => (
                       <div className="topic-header">
                         <div className="topic-meta">
                           <div className="name-container">
-                            <span className="name">Filip Jerga</span>
+                            <span className="name">Mehdi Hajikhani</span>
                           </div>
                           <div className="date-container"><span className="date">21h</span></div>
                         </div>
@@ -330,7 +330,7 @@ const Home = () => (
                       <div className="topic-header">
                         <div className="topic-meta">
                           <div className="name-container">
-                            <span className="name">Filip Jerga</span>
+                            <span className="name">Mehdi Hajikhani</span>
                           </div>
                           <div className="date-container"><span className="date">21h</span></div>
                         </div>
@@ -369,7 +369,7 @@ const Home = () => (
                       <div className="topic-header">
                         <div className="topic-meta">
                           <div className="name-container">
-                            <span className="name">Filip Jerga</span>
+                            <span className="name">Mehdi Hajikhani</span>
                           </div>
                           <div className="date-container"><span className="date">21h</span></div>
                         </div>
@@ -475,7 +475,7 @@ const Home = () => (
     {/* FOOTER STARTS */}
     <footer id="sticky-footer" className="py-4 bg-black text-white-50 py-3">
       <div className="container text-center">
-        <small>Copyright &copy; Your Website</small>
+        <small>Copyright &copy; Mehdi Hajikhani</small>
       </div>
     </footer>
     {/* FOOTER ENDS */}
