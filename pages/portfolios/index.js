@@ -2,6 +2,7 @@ import Navbar from '../../components/shared/Navbar';
  function portfolios() {
 
   return (
+    <>
     <Navbar/>
     <div className="container">
        <section className="section-title">
@@ -52,6 +53,7 @@ import Navbar from '../../components/shared/Navbar';
         </div>
       </section>
     </div>
+  </>
   )
 }
 
