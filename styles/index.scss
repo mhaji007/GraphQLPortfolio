@@ -236,7 +236,7 @@ html {
   align-items: center;
   width: 100%;
   min-height: 50vh;
-  background-image: linear-gradient(170deg,#535d9b 0%,#181E28 100%);
+  background-image: linear-gradient(170deg,#181E28 0%,#535d9b 100%);
 
   &-wrapper {
     max-width: 1180px;
@@ -282,7 +282,7 @@ html {
     }
 
     .hero-image {
-      border-radius: 50%;
+      border-radius: 10%;
   width: 100%;
   height: 100%;
   object-fit: cover;

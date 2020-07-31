@@ -15,7 +15,7 @@ return (
         <a className="grow hero-link">
           <img
             className="hero-image"
-            src="home6.jpg"></img>
+            src="home3.jpg"></img>
         </a>
       </div>
     </div>
