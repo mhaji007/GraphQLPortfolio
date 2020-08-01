@@ -1,3 +1,5 @@
+import FadeIn from 'react-fade-in';
+
 const Hero = () => {
 
 return (

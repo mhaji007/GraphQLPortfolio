@@ -1,4 +1,5 @@
-import axios from 'axios'
+import axios from 'axios';
+import FadeIn from 'react-fade-in';
 
 const fetchPortfolios = () => {
   const query = `
@@ -33,6 +34,7 @@ const Portfolios = ({portfolios}) => {
       <section className="pb-5">
         <div className="row">
           <div className="col-md-4">
+      <FadeIn delay="600" transitionDuration="800">
             <div className="card subtle-shadow no-border">
               <div className="card-body">
                 <h5 className="card-title">Card title</h5>
@@ -43,8 +45,10 @@ const Portfolios = ({portfolios}) => {
                 <small className="text-muted">Last updated 3 mins ago</small>
               </div>
             </div>
+        </FadeIn>
           </div>
           <div className="col-md-4">
+        <FadeIn delay="1100" transitionDuration="800">
             <div className="card subtle-shadow no-border">
               <div className="card-body">
                 <h5 className="card-title">Card title</h5>
@@ -55,8 +59,10 @@ const Portfolios = ({portfolios}) => {
                 <small className="text-muted">Last updated 3 mins ago</small>
               </div>
             </div>
+          </FadeIn>
           </div>
           <div className="col-md-4">
+          <FadeIn delay="1600" transitionDuration="800">
             <div className="card subtle-shadow no-border">
               <div className="card-body">
                 <h5 className="card-title">Card title</h5>
@@ -67,6 +73,7 @@ const Portfolios = ({portfolios}) => {
                 <small className="text-muted">Last updated 3 mins ago</small>
               </div>
             </div>
+        </FadeIn>
           </div>
         </div>
       </section>
