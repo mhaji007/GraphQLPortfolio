@@ -51,10 +51,8 @@ app.prepare().then(() => {
   const server = express()
 
   // Construct a schema, using GRAPHQL schema language
-  // What do you like to fetch
-  // ! means that cannot be null
   const schema = buildSchema(`
-      type Portfolio {
+      type Porfolio {
         _id: ID,
         title: String,
         company: String,
@@ -67,13 +65,12 @@ app.prepare().then(() => {
       }
       type Query {
         hello: String
-        portfolio(id: ID): Portfolio
-        portfolios: [Portfolio]
+        portfolio(id: ID): Porfolio
+        portfolios: [Porfolio]
       }
   `);
 
   // The root provides a resolver for each API endpoint
-  // Where what you like to fetch goes and gets a response from
   const root = {
     hello: () => {
       return 'Hello World!'
@@ -82,7 +79,9 @@ app.prepare().then(() => {
       const portfolio = data.portfolios.find(p => p._id === id)
       return portfolio;
     },
-
+    portfolios: () => {
+      return data.portfolios
+    }
   }
 
   server.use('/graphql', graphqlHTTP({
