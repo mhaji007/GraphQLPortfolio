@@ -54,7 +54,7 @@ app.prepare().then(() => {
   // What do you like to fetch
   // ! means that cannot be null
   const schema = buildSchema(`
-      type Porfolio {
+      type Portfolio {
         _id: ID,
         title: String,
         company: String,
@@ -67,8 +67,8 @@ app.prepare().then(() => {
       }
       type Query {
         hello: String
-        portfolio: Porfolio
-        portfolios: [Porfolio]
+        portfolio(id: ID): Portfolio
+        portfolios: [Portfolio]
       }
   `);
 
@@ -78,12 +78,11 @@ app.prepare().then(() => {
     hello: () => {
       return 'Hello World!'
     },
-    portfolio: () => {
-      return data.portfolios[0]
+    portfolio: ({id}) => {
+      const portfolio = data.portfolios.find(p => p._id === id)
+      return portfolio;
     },
-    portfolios: () => {
-      return data.portfolios
-    }
+
   }
 
   server.use('/graphql', graphqlHTTP({
