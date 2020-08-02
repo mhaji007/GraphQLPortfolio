@@ -37,7 +37,6 @@ const Portfolios = ({portfolios}) => {
       <section className="pb-5">
         <div className="row">
           { portfolios.map((portfolio,index) =>{
-            console.log(index);
             return (
             <div key={portfolio._id} className="col-md-4">
               <FadeIn delay= {(400 + index)*index}>
