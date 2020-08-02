@@ -1,6 +1,7 @@
 import axios from 'axios'
 import PortfolioCard from '@/components/portfolios/PortfolioCard';
 import FadeIn from 'react-fade-in';
+import Link from 'next/link';
 
 const fetchPortfolios = () => {
   const query = `
@@ -40,7 +41,13 @@ const Portfolios = ({portfolios}) => {
             return (
             <div key={portfolio._id} className="col-md-4">
               <FadeIn delay= {(400 + index)*index}>
-                <PortfolioCard portfolio={portfolio} />
+              <Link
+                href='/portfolios/[id]'
+                as={`/portfolios/${portfolio._id}`}>
+                <a className="card-link">
+                  <PortfolioCard portfolio={portfolio} />
+                </a>
+              </Link>
               </FadeIn>
             </div>
           )

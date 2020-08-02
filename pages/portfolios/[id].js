@@ -1,14 +1,11 @@
-import {useRouter} from 'next/router';
-
-
 import React from 'react';
 import axios from 'axios';
 
 const fetchPortfolioById = (id) => {
   const query = `
-  query Portfolio {
-    portfolio (id: "${id}") {
-      _id,
+    query Portfolio($id: ID) {
+      portfolio (id: $id) {
+        _id,
         title,
         company,
         companyWebsite
@@ -19,12 +16,13 @@ const fetchPortfolioById = (id) => {
         endDate
       }
     }`;
-    return axios.post('http://localhost:3000/graphql', { query })
+  const variables = { id };
+  return axios.post('http://localhost:3000/graphql', { query, variables })
     .then(({data: graph}) => graph.data)
     .then(data => data.portfolio)
-  }
+}
 
-  const PortfolioDetail = ({portfolio}) => {
+const PortfolioDetail = ({portfolio}) => {
 
   return (
     <div className="portfolio-detail">
