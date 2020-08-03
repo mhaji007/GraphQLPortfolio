@@ -1,28 +1,17 @@
-import React from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from 'react';
+import { useQuery, useLazyQuery } from '@apollo/react-hooks';
+import { GET_PORTFOLIO } from '@/apollo/queries';
 
-const fetchPortfolioById = (id) => {
-  const query = `
-    query Portfolio($id: ID) {
-      portfolio (id: $id) {
-        _id,
-        title,
-        company,
-        companyWebsite
-        location
-        jobTitle
-        description
-        startDate
-        endDate
-      }
-    }`;
-  const variables = { id };
-  return axios.post('http://localhost:3000/graphql', { query, variables })
-    .then(({data: graph}) => graph.data)
-    .then(data => data.portfolio)
-}
+const PortfolioDetail = ({query}) => {
+  const [portfolio, setPortfolio] = useState(null);
+  const [ getPortfolio, {loading, data}] = useLazyQuery(GET_PORTFOLIO);
 
-const PortfolioDetail = ({portfolio}) => {
+  useEffect(() => {
+    getPortfolio({variables: {id: query.id}})
+  }, [])
+
+  if (data && !portfolio) { setPortfolio(data.portfolio) }
+  if (loading || !portfolio) { return 'Loading...' };
 
   return (
     <div className="portfolio-detail">
@@ -66,8 +55,7 @@ const PortfolioDetail = ({portfolio}) => {
 }
 
 PortfolioDetail.getInitialProps = async ({query}) => {
-  const portfolio = await fetchPortfolioById(query.id);
-  return {portfolio};
+  return {query};
 }
 
 

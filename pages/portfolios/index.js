@@ -149,12 +149,12 @@ const fetchPortfolios = () => {
               <button
                 className="btn btn-warning"
                 onClick={() => updatePortfolio(portfolio._id)}>Update Portfolio</button>
-              </>
               <button
                 onClick={() => deletePortfolio(portfolio._id)}
                 className="btn btn-danger">
                 Delete Portfolio
               </button>
+                </>
               </FadeIn>
             </div>
           )
