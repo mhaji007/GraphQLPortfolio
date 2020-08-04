@@ -1,49 +1,49 @@
-import ApolloClient from 'apollo-boost';
-import {ApolloProvider} from '@apollo/react-hooks';
+// import ApolloClient from 'apollo-boost';
+// import {ApolloProvider} from '@apollo/react-hooks';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Hero from '../components/shared/Hero';
-import '../styles/index.scss';
-// import App from 'next/app';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import Hero from '../components/shared/Hero';
+// import '../styles/index.scss';
+// // import App from 'next/app';
 
-const client = new ApolloClient({
-  uri: 'http://localhost:3000/graphql'
-});
+// const client = new ApolloClient({
+//   uri: 'http://localhost:3000/graphql'
+// });
 
-import Navbar from '../components/shared/Navbar';
+// import Navbar from '../components/shared/Navbar';
 
-function MyApp({ Component, pageProps }) {
+// function MyApp({ Component, pageProps }) {
 
-  const isHomePage = () => Component.name === 'Home'
+//   const isHomePage = () => Component.name === 'Home'
 
-  return(
+//   return(
 
-  <ApolloProvider client={client}>
+//   <ApolloProvider client={client}>
 
 
-    <div className="portfolio-app">
+//     <div className="portfolio-app">
 
-      <Navbar/>
+//       <Navbar/>
 
-        {/* {pageProps.appData} */}
+//         {/* {pageProps.appData} */}
 
-        {isHomePage() &&  <Hero/> }
+//         {isHomePage() &&  <Hero/> }
 
-      <div className="container">
-        <Component {...pageProps} />
-      </div>
+//       <div className="container">
+//         <Component {...pageProps} />
+//       </div>
 
-      {isHomePage() &&
-      <footer id="sticky-footer" className="py-4 bg-black text-white-50 py-3">
-            <div className="container text-center">
-              <small>Copyright &copy; Mehdi Hajikhani</small>
-            </div>
-      </footer>
-      }
-    </div>
-  </ApolloProvider>
-  )
-}
+//       {isHomePage() &&
+//       <footer id="sticky-footer" className="py-4 bg-black text-white-50 py-3">
+//             <div className="container text-center">
+//               <small>Copyright &copy; Mehdi Hajikhani</small>
+//             </div>
+//       </footer>
+//       }
+//     </div>
+//   </ApolloProvider>
+//   )
+// }
 
 // MyApp.getInitialProps = async (context) => {
 //   console.log('GET INITIAL PROPS _APP')
@@ -52,4 +52,35 @@ function MyApp({ Component, pageProps }) {
 //   return {pageProps: {appData: '_App Component', ...initialProps.pageProps}}
 // }
 
-export default MyApp
+// export default MyApp
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../styles/index.scss';
+import Navbar from '../components/shared/Navbar';
+import Hero from '../components/shared/Hero';
+
+const MyApp = ({Component, pageProps}) => {
+
+  const isHomePage = () => Component.name === 'Home'
+
+  return (
+    <div className="portfolio-app">
+      <Navbar />
+      { isHomePage() && <Hero /> }
+      <div className="container">
+        <Component {...pageProps} />
+      </div>
+      {/* FOOTER STARTS */}
+      { isHomePage() &&
+        <footer id="sticky-footer" className="py-4 bg-black text-white-50 py-3">
+          <div className="container text-center">
+            <small>Copyright &copy; Your Website</small>
+          </div>
+        </footer>
+      }
+      {/* FOOTER ENDS */}
+    </div>
+  )
+}
+
+export default MyApp;
