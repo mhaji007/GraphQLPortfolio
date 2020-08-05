@@ -146,7 +146,7 @@
 
 import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
-import { GET_PORTFOLIO } from '@/apollo/queries';
+import { GET_PORTFOLIO } from '../../apollo/actions/node_modules/@/apollo/queries';
 import withApollo from '@/hoc/withApollo';
 import { getDataFromTree } from '@apollo/react-ssr';
 
