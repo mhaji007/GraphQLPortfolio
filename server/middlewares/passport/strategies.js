@@ -1,8 +1,9 @@
+
 const { Strategy } = require('passport-strategy');
 
 
-// Strategy gets options(email, password) needed to authenticate user
-// Strategy recieves a callback function that will contain functionality to verify a user
+// Strategy get options(email, password) needed to authenticate user
+// Strategy gets a callback function that will contain functionality to verify an user
 // Strategy has to have "authenticate" function
 // Strategy has access to "error" "fail" "success" functions
 class GraphqlStrategy extends Strategy {
@@ -17,15 +18,16 @@ class GraphqlStrategy extends Strategy {
     this.verify = verify;
     this.name = 'graphql';
   }
-  // first value is the request object from server
+
   authenticate(_, options) {
     console.log('Calling authenticate in strategy!');
 
     // in done we will receive "error", "user", "info"
     const done = () => {
-      console.log('Calling done in authenticate callback');
-
-      this.success();
+      if (true) {
+        // this.success('LoggedInUser');
+        this.error('Some nasty error!');
+      }
       // if user then call "success" otherwise call "fail" or "error"
     }
 
