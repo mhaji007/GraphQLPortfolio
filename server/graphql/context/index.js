@@ -1,7 +1,7 @@
 const passport = require('passport');
 
 // options == {email, password}
-const authenticateUser = (options) => {
+const authenticateUser = (req, options) => {
   return new Promise((resolve, reject) => {
     const done = (error, user) => {
 
@@ -9,8 +9,9 @@ const authenticateUser = (options) => {
         return reject(new Error(error));
       }
 
-      // If we will get user we can save session to DB
       if (user) {
+        // If we will get user we can save session to DB
+        req.helloWorld();
         return resolve(user);
       } else {
         return reject(new Error('Invalid password or email!'));
@@ -24,9 +25,9 @@ const authenticateUser = (options) => {
 
 
 
-exports.buildAuthContext = () => {
+exports.buildAuthContext = (req) => {
   const auth = {
-    authenticate: (options) => authenticateUser(options)
+    authenticate: (options) => authenticateUser(req, options)
   }
 
   return auth;
